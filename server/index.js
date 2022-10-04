@@ -1,6 +1,6 @@
 const express = require('express')
 const cors = require('cors')
-const mysql = require('mysql2')
+const mysql = require('mysql2/promise')
 const config = require('./config')
 
 const app = express()
@@ -17,7 +17,7 @@ app.get("/", async (req, res) => {
 
     try {
         const connection = await mysql.createConnection(config.db)
-        const [result,] = await connection.execute('select * from task')
+        const [result,] = await conn.execute('select * from task')
 
         if (!result) result = []
 
