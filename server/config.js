@@ -3,8 +3,9 @@ const config={
     db: {
 
         host: 'localhost',
+        port:8889,
         user: 'root',
-        password:'',
+        password:'root',
         database:'databaseapp'
     }
 }
